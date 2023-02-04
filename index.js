@@ -28,8 +28,14 @@ document.getElementById("copy-button").addEventListener("click", () => {
   alert("Texto copiado al portapapeles");
 });
 
-document.getElementById("tipo").addEventListener("onchange", (selector) => {
-  console.log(selector);
+document.getElementById("tipo").addEventListener("change", (selector) => {
+  console.log(selector.target.value);
+  if (selector.target.value === "decrypt") {
+    document.getElementById("cambioTexto").innerText = "Texto a Desencriptar";
+  }
+  if (selector.target.value === "encrypt") {
+    document.getElementById("cambioTexto").innerText = "Texto a Encriptar";
+  }
 });
 
 const encryptionDict = {
